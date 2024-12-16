@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rex Lobby - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: #1e1e1e;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: background-color 0.3s;
+        }
+
+        header.sticky {
+            background-color: #000;
+        }
+
+        header .logo {
+            font-size: 24px;
+            font-weight: 600;
+            color: #ff5733;
+        }
+
+        header nav {
+            display: flex;
+            gap: 20px;
+        }
+
+        header nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        header nav a:hover {
+            color: #ff5733;
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(to bottom, #1e1e1e, #121212);
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeIn 1.5s forwards;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeIn 2s forwards;
+        }
+
+        .hero .cta {
+            padding: 15px 30px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #ff5733;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeIn 2.5s forwards;
+        }
+
+        .hero .cta:hover {
+            background-color: #e14d2a;
+        }
+
+        .scroll-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #1e1e1e;
+            text-align: center;
+        }
+
+        .scroll-section h2 {
+            font-size: 2.5rem;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .scroll-section p {
+            font-size: 1rem;
+            line-height: 1.5;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="logo">Rex Lobby</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <div class="hero" id="home">
+        <div>
+            <h1>Welcome to Rex Lobby</h1>
+            <p>Your one-stop solution for websites, VFX, and design needs.</p>
+            <button class="cta">Get Started</button>
+        </div>
+    </div>
+
+    <div class="scroll-section" id="about">
+        <div>
+            <h2>About Rex Lobby</h2>
+            <p>We are experts in crafting professional static and dynamic websites, creating stunning video edits, VFX, templates, logos, and web applications.</p>
+        </div>
+    </div>
+
+    <div class="scroll-section" id="services">
+        <div>
+            <h2>Our Services</h2>
+            <p>From cutting-edge designs to powerful web applications, we offer a wide range of services to meet your needs.</p>
+        </div>
+    </div>
+
+    <div class="scroll-section" id="contact">
+        <div>
+            <h2>Contact Us</h2>
+            <p>Get in touch with us to discuss your next project and bring your ideas to life.</p>
+        </div>
+    </div>
+
+    <script>
+        const header = document.getElementById('header');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+        });
+    </script>
+</body>
+</html>
